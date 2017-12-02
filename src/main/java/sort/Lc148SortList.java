@@ -6,6 +6,18 @@ import common.ListNodeUtil;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 最开始想着使用 insertionSort 的方法
+ * 一开始想要进行 swap Node，但是这个没法实现，后来想好像只需要 swap val 就可以
+ * 提交之后，发现 TLE，insertionSort n 方的复杂度，题目要求 nLogN
+ * 再就参考 LeetCode 和九章算法上面的解题思路，使用 mergeSort 的方法
+ * 进行解题。
+ * 先要将 List 拆成两个 List，这个简单用两个步长不一样的 pointer 搞定，
+ * 然后就是用 MergeSort 的那一套方案进行解题。
+ *
+ * LeetCode 和九章算法上面提到这个题目还有 quicksort 的解法，到时候如果
+ * 会再弄这一道题目的话，再去研究
+ */
 public class Lc148SortList {
     private static ListNode mergeSortList(ListNode head) {
         return mergeSort(head);
