@@ -7,28 +7,45 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Lc148SortList {
-    private static ListNode sortList(ListNode head) {
+    private static ListNode slowSortList(ListNode head) {
         if (head == null) {
             return null;
         }
 
-        // 初始化 minNode
-        ListNode minNode = head;
+        ListNode headerNode = head;
 
-        ListNode current = head;
-        while (current.next != null) {
-            if (current.val < minNode.val) {
-                minNode = current;
+        while (headerNode != null) {
+            // 初始化 minNode
+            ListNode minNode = headerNode;
+            ListNode currentNode = headerNode.next;
+
+            while (currentNode != null) {
+                if (currentNode.val < minNode.val) {
+                    minNode = currentNode;
+                }
+                currentNode = currentNode.next;
             }
-            current = current.next;
+            // now exchange values minNode and headerNode
+            if (minNode != headerNode) {
+                swapVal(headerNode, minNode);
+            }
+
+            headerNode = headerNode.next;
         }
 
-        return current;
+        return head;
+    }
+
+    private static void swapVal(ListNode headerNode, ListNode minNode) {
+        Integer tmp = minNode.val;
+        minNode.val = headerNode.val;
+        headerNode.val = tmp;
     }
 
     public static void main(String[] args) {
         List<Integer> integers = Arrays.asList(5, 6, 7, 2, 3);
         ListNode listNode = ListNodeUtil.createListNode(integers);
-        ListNodeUtil.printListNode(listNode);
+        ListNode listNode1 = slowSortList(listNode);
+        ListNodeUtil.printListNode(listNode1);
     }
 }
