@@ -1,6 +1,7 @@
 package linkedlist;
 
 import common.ListNode;
+import common.ListNodeUtil;
 import org.junit.Test;
 
 public class Lc206ReverseLinkedListTest {
@@ -9,10 +10,10 @@ public class Lc206ReverseLinkedListTest {
 
     @Test
     public void reverseList() throws Exception {
-        ListNode head = TestUtil.createListNode(5);
+        ListNode head = ListNodeUtil.createListNode(5);
 
         ListNode list = sut.reverseList(head);
-        TestUtil.printListNode(list);
+        ListNodeUtil.printListNode(list);
     }
 
 }
