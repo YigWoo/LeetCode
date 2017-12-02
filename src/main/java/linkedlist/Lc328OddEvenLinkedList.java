@@ -1,5 +1,7 @@
 package linkedlist;
 
+import common.ListNode;
+
 public class Lc328OddEvenLinkedList {
 
 	public ListNode oddEvenList(ListNode head) {

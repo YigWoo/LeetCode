@@ -1,5 +1,6 @@
 package linkedlist;
 
+import common.ListNode;
 import org.junit.Test;
 
 public class Lc237DeleteNodeTest {

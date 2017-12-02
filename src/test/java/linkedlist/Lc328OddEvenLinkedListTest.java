@@ -1,5 +1,6 @@
 package linkedlist;
 
+import common.ListNode;
 import org.junit.Before;
 import org.junit.Test;
 

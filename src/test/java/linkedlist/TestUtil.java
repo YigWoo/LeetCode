@@ -1,5 +1,7 @@
 package linkedlist;
 
+import common.ListNode;
+
 class TestUtil {
 	static void printListNode(ListNode head) {
 		while (head != null) {

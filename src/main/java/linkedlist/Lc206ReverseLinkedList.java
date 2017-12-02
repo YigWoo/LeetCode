@@ -1,5 +1,7 @@
 package linkedlist;
 
+import common.ListNode;
+
 public class Lc206ReverseLinkedList {
 
     public ListNode reverseList(ListNode head) {

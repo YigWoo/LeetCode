@@ -1,5 +1,7 @@
 package linkedlist;
 
+import common.ListNode;
+
 public class Lc237DeleteNode {
 
 	/**
