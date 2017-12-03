@@ -1,5 +1,6 @@
 package sort;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -11,7 +12,7 @@ public class Lc349Intersection {
         Set<Integer> num2Set = Arrays.stream(nums2).boxed().collect(Collectors.toSet());
         num1Set.retainAll(num2Set);
 
-        List<Integer> collect = num1Set.stream().collect(Collectors.toList());
+        List<Integer> collect = new ArrayList<>(num1Set);
 
         int[] result = new int[num1Set.size()];
 
